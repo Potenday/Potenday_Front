@@ -1,12 +1,12 @@
-import { useState } from 'react'
-import './App.css'
-
+import { RecoilRoot } from "recoil"
+import { RouterProvider } from "react-router-dom"
+import { routers } from "./router"
 function App() {
 
   return (
-    <div className="App">
-
-    </div>
+    <RecoilRoot>
+      <RouterProvider router={routers} />
+    </RecoilRoot>
   )
 }
 
