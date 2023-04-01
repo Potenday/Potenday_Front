@@ -3,6 +3,8 @@ import { Router as RemixRouter } from '@remix-run/router/dist/router'
 import GeneralLayout from './GereralLayout'
 import Main from "./pages/Main"
 import Login from './pages/Login'
+import MyResult from './pages/MyResult'
+import SelectTree from './pages/SelectTree'
 
 interface RouterBase {
     id: number,
@@ -26,6 +28,18 @@ interface UserAccessibleRouterElement extends RouterBase {
         path: '/', 
         page: <Main/>,
         withAuth: true
+    },
+    {
+        id: 2,
+        path: '/my-result',
+        page: <MyResult/>,
+        withAuth: false
+    },
+    {
+        id: 3,
+        path: '/select-tree',
+        page: <SelectTree/>,
+        withAuth: false
     }
   ]
 
