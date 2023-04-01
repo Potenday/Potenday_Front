@@ -53,6 +53,7 @@ table {
 }
 button {
 	border: unset;
+	background-color: unset;
 }
 `
 
