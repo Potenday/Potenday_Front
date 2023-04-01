@@ -10,4 +10,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   </React.StrictMode>,
 )
 
-window.Kakao.init(import.meta.env.VITE_KAKAO as string)
+window.Kakao.init(import.meta.env.VITE_KAKAO_SHARE as string)

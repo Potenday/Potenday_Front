@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:8080' 
+export const BASE_URL = 'http://localhost:5173' 
 export const TREES = [
     { id: 0, name: '소나무', 
     property: 
