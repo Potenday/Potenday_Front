@@ -9,3 +9,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <App />
   </React.StrictMode>,
 )
+
+window.Kakao.init(import.meta.env.VITE_KAKAO as string)
