@@ -27,7 +27,7 @@ jobs:
             options:
               docbase: /dist
               nodeversion: "18"
-              build: tsc && vite build
+              build: npm run build
               install: npm i
             context:
               git:
