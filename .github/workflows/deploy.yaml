@@ -1,0 +1,35 @@
+name: Deploy to cloudtype1
+on:
+  push:
+    branches:
+      - main
+jobs:
+  pierong:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Connect repository
+        uses: cloudtype-github-actions/connect@v1
+        with:
+          token: ${{ secrets.CLOUDTYPE_TOKEN }}
+          ghtoken: ${{ secrets.GHP_TOKEN }}
+          scope: potenday
+      - name: Deploy to Cloudtype
+        uses: cloudtype-github-actions/deploy@v1
+        with:
+          token: ${{ secrets.CLOUDTYPE_TOKEN }}
+          project: potenday/potenday
+          stage: main
+          yaml: |-
+            name: potenday-front
+            app: web
+            options:
+              docbase: /dist
+              nodeversion: "18"
+              build: tsc && vite build
+              install: npm i
+            context:
+              git:
+                ref: ${{ github.ref }}
+                url: git@github.com:${{ github.repository }}.git
