@@ -5,13 +5,13 @@ type Props = {
     // title?: string | undefined;
     image?: string | undefined;
 }
-export const kakaoShare = ({image}:Props) => {
+export const kakaoShare = () => {
       window.Kakao.Share.sendDefault({
         objectType: "feed",
         content: {
           title: '함께 키우는 이야기숲',
           description: "나랑 비슷하다고 생각하는 나무를 심어주세요!", 
-          imageUrl: image,
+          imageUrl: "./images/kakao-share-icon.svg",
           link: {
             mobileWebUrl: BASE_URL,
             webUrl: BASE_URL

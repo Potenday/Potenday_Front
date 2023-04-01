@@ -30,7 +30,7 @@ function Main() {
       </UpperSection>
       <Section>
         <BtnSection>
-          <button onClick={() => kakaoShare("./images/img_소나무.png")}>
+          <button onClick={() => kakaoShare()}>
             <img
               src={"./images/kakao-share-icon.svg"}
               alt={"카카오톡"}

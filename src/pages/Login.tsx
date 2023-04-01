@@ -4,7 +4,7 @@ import { useRouter } from "../hooks/useRouter"
 import { BASE_URL } from "../api/constant"
 function Login() {
   const {routeTo} = useRouter()
-  const KAKAO_AUTH = `https://kauth.kakao.com/oauth/authorize?client_id=${import.meta.env.VITE_KAKAO_REST_API_KEY}&redirect_uri=${BASE_URL}&response_type=code`
+  const KAKAO_AUTH = `https://kauth.kakao.com/oauth/authorize?client_id=${import.meta.env.VITE_KAKAO_REST_API_KEY}&redirect_uri=http://localhost:3000/login/oauth2/callback/kakao&response_type=code`
   return (
     <Section>
     <h1>나의 이야기숲 시작하기</h1>
