@@ -8,24 +8,21 @@ type LoginResult = 'success' | 'fail'
 //   authCode: string | null
 // }
 
-export const login = async (authCode: string|null): Promise<LoginResult> => {
-
-  const loginRes = await fetch(`${BASE_URL}/api/users/login`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      credentials: 'include'
-    },
-    body: JSON.stringify(authCode)
-  })
-  console.log(loginRes)
-  return loginRes?.ok ? 'success' : 'fail'
-}
+// export const login = async (authCode: string|null): Promise<LoginResult> => {
+//   const loginRes = await fetch(`${BASE_URL}/api/users/login?`, {
+//     method: 'GET',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       credentials: 'include'
+//     },
+//   })
+//   console.log(loginRes)
+//   return loginRes?.ok ? 'success' : 'fail'
+// }
 
 export const getCurrentUserInfo = async (): Promise<User | null> => {
-  // TODO: GET, '/profile' 호출
-  // 호출 성공시 유저 정보 반환
-  const userInfoRes = await fetch(`${ BASE_URL }//profile`, {
+  const code = new URL(document.location.toString()).searchParams.get('code')
+  const userInfoRes = await fetch(`${ BASE_URL }/api/users/login?code=${code}`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -34,32 +31,6 @@ export const getCurrentUserInfo = async (): Promise<User | null> => {
   })
 
   return userInfoRes.ok ? userInfoRes.json() : null
-}
-
-// TODO 4-2: GET, '/items' 호출
-export const getItems = async (): Promise<Tree[] | null> => {
-  const itemRes = await fetch(`${ BASE_URL }/api/trees`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      credentials: 'include'
-    }
-  })
-
-  return itemRes.ok ? itemRes.json() : null
-}
-
-// TODO 4-2: GET, '/all-items' 호출
-export const getAllItems = async (): Promise<Tree[] | null> => {
-  const itemRes = await fetch(`${ BASE_URL }/all-items`, {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      credentials: 'include'
-    }
-  })
-
-  return itemRes.ok ? itemRes.json() : null
 }
 
 

@@ -1,9 +1,7 @@
 import Button from "../components/Button"
 import styled from "styled-components"
-import { useRouter } from "../hooks/useRouter"
-import { BASE_URL } from "../api/constant"
+
 function Login() {
-  const {routeTo} = useRouter()
   const KAKAO_AUTH = `https://kauth.kakao.com/oauth/authorize?client_id=${import.meta.env.VITE_KAKAO_REST_API_KEY}&redirect_uri=http://localhost:3000/login/oauth2/callback/kakao&response_type=code`
   return (
     <Section>
