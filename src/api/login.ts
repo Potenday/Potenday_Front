@@ -25,7 +25,7 @@ export const login = async (authCode: string|null): Promise<LoginResult> => {
 export const getCurrentUserInfo = async (): Promise<User | null> => {
   // TODO: GET, '/profile' 호출
   // 호출 성공시 유저 정보 반환
-  const userInfoRes = await fetch(`${ BASE_URL }/profile`, {
+  const userInfoRes = await fetch(`${ BASE_URL }//profile`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
