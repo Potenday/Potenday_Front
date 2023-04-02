@@ -4,22 +4,21 @@ import { Tree } from '../types/user'
 
 type LoginResult = 'success' | 'fail'
 
-export interface LoginRequest {
-  username: string
-  password: string
-}
+// export interface LoginRequest {
+//   authCode: string | null
+// }
 
-export const login = async (args: LoginRequest): Promise<LoginResult> => {
-  const authCode = new URL(document.location.toString()).searchParams.get('code')
+export const login = async (authCode: string|null): Promise<LoginResult> => {
+
   const loginRes = await fetch(`${BASE_URL}/api/users/login`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       credentials: 'include'
     },
-    body: JSON.stringify(args)
+    body: JSON.stringify(authCode)
   })
-
+  console.log(loginRes)
   return loginRes?.ok ? 'success' : 'fail'
 }
 

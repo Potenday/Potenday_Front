@@ -16,12 +16,13 @@ export interface User {
 }
 
 export interface Tree {
+  treeName: string
   id: number // pk
-  owner: {
-    userId: number
-  },
-  content: {
-    title: string
-    property: string[]
-  }
+  // owner: {
+  //   userId: number
+  // },
+  // content: {
+  //   title: string
+  //   property: string[]
+  // }
 }
