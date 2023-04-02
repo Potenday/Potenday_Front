@@ -3,6 +3,7 @@ import Button from "../components/Button"
 import TreeItem from "../components/TreeSelectItem"
 import { TREES } from "../api/constant"
 import { useState } from "react"
+import { plantTree } from "../api/plantTree"
 
 const SelectTree = () => {
   const TreeItems = TREES.map((tree) => <TreeItem treeName={tree.name} />)
@@ -26,7 +27,6 @@ const SelectTree = () => {
   }
   return (
     <Section>
-        <Button onClick={()=>{}} width={'50%'}>선택</Button>
         <h1>00님과 가장 잘 어울리는 나무는? <br /> 00님의 강점을 선택하며 선택해주세요!</h1>
         <ItemDiv>
         <button onClick={handlePrevTree}>
@@ -37,6 +37,7 @@ const SelectTree = () => {
         <Arrow src={'./images/btn_next.arrow.png'} alt='next' />
         </button>
         </ItemDiv>
+        <Button onClick={()=>plantTree(currentIndex)} width={'50%'}>선택</Button>
     </Section>
   )
 }
@@ -44,12 +45,14 @@ const SelectTree = () => {
 export default SelectTree
 
 const Section = styled.section`
+max-width: 428px;
 display: flex;
 flex-direction: column;
 margin: 0 auto;
 padding: 30px;
 position: relative;
 gap: 20px;
+text-align: center;
 `
 
 const Arrow = styled.img.attrs(({src, alt})=>({

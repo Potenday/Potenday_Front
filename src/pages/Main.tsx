@@ -4,8 +4,10 @@ import useCopyClipBoard from "../hooks/useCopyClipBoard";
 import { BASE_URL } from "../api/constant";
 import { useEffect, useState } from "react";
 import { kakaoShare } from "../api/kakaoShare";
+import { useRouter } from "../hooks/useRouter";
 
 function Main() {
+  const {routeTo} = useRouter()
   const [isCopy, onCopy] = useCopyClipBoard();
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const handleCopy = (url: string) => {
@@ -25,7 +27,7 @@ function Main() {
     <>
       <UpperSection>
         <H1>00님의 숲</H1>
-        <Button onClick={() => {}}>확인하기</Button>
+        <Button onClick={() => {routeTo('./select-tree')}}>나무심기</Button>
         {/* 다른 사람이면 나무심기 버튼 */}
       </UpperSection>
       <Section>
