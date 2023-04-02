@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:5173' 
+export const BASE_URL = 'https://port-0-potenday-back-nx562olfxzmgcj.sel3.cloudtype.app/' 
 export const TREES = [
     { id: 0, name: '소나무', 
     property: 
