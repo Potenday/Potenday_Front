@@ -5,6 +5,7 @@ import Main from "./pages/Main"
 import Login from './pages/Login'
 import MyResult from './pages/MyResult'
 import SelectTree from './pages/SelectTree'
+import Redirection from './pages/Redirection'
 
 interface RouterBase {
     id: number,
@@ -25,22 +26,28 @@ interface UserAccessibleRouterElement extends RouterBase {
     },
     {
         id: 1,
+        path: '/login/oauth2/callback/kakao',
+        page: <Redirection />,
+        withAuth: false
+    },
+    {
+        id: 2,
         path: '/', 
         page: <Main/>,
         withAuth: true
     },
     {
-        id: 2,
+        id: 3,
         path: '/my-result',
         page: <MyResult/>,
         withAuth: false
     },
     {
-        id: 3,
+        id: 4,
         path: '/select-tree',
         page: <SelectTree/>,
         withAuth: false
-    }
+    },
   ]
 
   export const routers: RemixRouter = createBrowserRouter(
