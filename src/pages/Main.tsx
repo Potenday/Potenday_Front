@@ -80,6 +80,8 @@ const UpperSection = styled.section`
   height: 10vh;
   display: flex;
   justify-content: space-between;
+  max-width: 428px;
+  margin: 0 auto;
   background-image: url("./images/sky.png");
   background-size: cover;
   background-position-y: bottom;
